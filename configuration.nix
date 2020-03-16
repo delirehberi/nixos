@@ -41,7 +41,7 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget git cachix alacritty spotifyd playerctl gnome3.nautilus gnome3.sushi bashmount ntfs3g xclip lastpass-cli gnumake obs-studio lxqt.pavucontrol-qt
+    wget git cachix alacritty spotifyd playerctl gnome3.nautilus gnome3.sushi bashmount ntfs3g xclip lastpass-cli gnumake obs-studio lxqt.pavucontrol-qt shutter powerline-rs
   ];
 
   programs.tmux.enable = true;
