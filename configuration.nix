@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 let 
   spotifydConfig = import /home/delirehberi/.config/spotifyd;
-  openvpnConfig = import /home/delirehberi/emre.ovpn;
+  openvpnConfig = builtins.readFile /home/delirehberi/emre.ovpn;
 in 
   {
     imports =
