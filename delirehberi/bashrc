@@ -1,0 +1,32 @@
+#GIT_PATH=$(which git)
+#GIT_DIR=$(ls -alh $GIT_PATH|awk '{print $11}'|sed 's/bin\/git//')
+
+#source $GIT_DIR"/etc/bash_completion.d/git-prompt.sh"
+#export GIT_PS1_SHOWDIRTYSTATE=1
+#export PS1='\u@\h:\w$(__git_ps1 " (%s)") '
+#PS1+="\n└─▶ "
+
+prompt() {
+  PS1="$(powerline-rs --shell bash $?)"
+}
+PROMPT_COMMAND=prompt
+
+HISTCONTROL=ignoreboth:erasedups HISTSIZE=100000 HISTFILESIZE=200000
+
+
+#aliases
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias h='history'
+alias j='jobs -l'
+alias ..='cd ..'
+alias du='du -kh' 
+alias df='df -kTh'
+alias l="ls -alh --color"
+
+#functions
+function maketar() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
+function makezip() { zip -r "${1%%/}.zip" "$1" ; }
+function getbranch() { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/';  }
+

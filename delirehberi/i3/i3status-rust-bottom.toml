@@ -1,0 +1,39 @@
+theme = "gruvbox-dark"
+icons = "awesome"
+
+
+
+[[block]]
+block = "net"
+device = "wlp107s0"
+ssid = true
+ip = true
+speed_up = true
+graph_up = true
+interval = 5
+
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 10
+format = "{average}° avg"
+chip = "*-isa-*"
+
+[[block]]
+block = "toggle"
+text = "DSP"
+command_state = "xrandr | grep DP-1\\ connected\\ 38 | grep -v eDP-1"
+command_on = "~/.screenlayout-ext.sh"
+command_off = "~/.screenlayout-laptop.sh"
+interval = 5
+
+[[block]]
+block = "xrandr"
+icons = true
+resolution = true
+interval = 2
+
+[[block]]
+block = "custom"
+command = "echo G:$(curl -s -H 'Authorization: token '$(cat ~/.github-secrets) https://api.github.com/notifications|jq '.|length')"
+interval = 5

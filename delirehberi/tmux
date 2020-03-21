@@ -1,0 +1,8 @@
+set -g status-interval 2
+set -g default-terminal "screen-256color"
+# clock
+set-window-option -g clock-mode-colour green #green
+
+set -g base-index 1
+
+bind r source-file ~/.tmux.conf \; display-message "Config reloaded..."

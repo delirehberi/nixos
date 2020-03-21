@@ -10,9 +10,10 @@ in
         ./xserver.nix
         ./boot.nix
         ./network.nix
+        <home-manager/nixos>
       ];
 
-
+      
       i18n = {
         consoleFont = "Lat2-Terminus16";
         consoleKeyMap = "trq";
@@ -54,13 +55,15 @@ in
     extraGroups = [ "wheel" "docker" "networkmanager" ]; # Enable ‘sudo’ for the user.
   };
 
+  home-manager.users.delirehberi = import ./delirehberi/home.nix;
+
   nix ={
     binaryCaches = [
       "https://cache.nixos.org/"
       "https://all-hies.cachix.org"
     ];
     trustedUsers = [ "root" "delirehberi" ];
-    gc.automatic = true;
+    #gc.automatic = true;
     optimise.automatic = true;
     autoOptimiseStore = true;
   };
@@ -73,6 +76,12 @@ in
   '';
   services.openvpn.servers.client.config = openvpnConfig;
   services.openvpn.servers.client.autoStart = true;
+  services.redshift.enable = true;
+  location = {
+    # Ankara City
+    latitude = 39.925533;
+    longitude = 32.866287;
+  };
   system.stateVersion = "19.09"; # Did you read the comment?
 }
 
