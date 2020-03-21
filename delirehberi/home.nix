@@ -7,6 +7,7 @@ let
     ./vscode.nix
     ./vim.nix
     ./go.nix
+    ./spotifyd.nix
   ];
 in {
   nixpkgs.config.allowUnfree = true;
@@ -44,6 +45,6 @@ in {
   programs.feh.enable = true;
   programs.firefox = {
     enable = true;
-    };
+  };
 }
 

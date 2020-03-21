@@ -42,13 +42,14 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget git cachix alacritty spotifyd playerctl gnome3.nautilus gnome3.sushi bashmount ntfs3g xclip lastpass-cli gnumake obs-studio lxqt.pavucontrol-qt shutter powerline-rs
+    wget git cachix alacritty spotifyd playerctl gnome3.nautilus gnome3.sushi bashmount ntfs3g xclip lastpass-cli gnumake obs-studio lxqt.pavucontrol-qt shutter powerline-rs zoom-us
   ];
 
   programs.tmux.enable = true;
   virtualisation.docker.enable = true;
 
   sound.enable = true;
+  sound.mediaKeys.enable = true;
 
   users.users.delirehberi = {
     isNormalUser = true;

@@ -1,7 +1,6 @@
 {config, lib, pkgs, ...}:
 let 
 	wakatimeKey = builtins.readFile ./wakatimekey.secret.nix;
-  spotifydPassword = builtins.readFile ./spotifydpassword.secret.nix;
   bashrc = (builtins.readFile ./bashrc);
   tmux = (builtins.readFile ./tmux);
 in {
@@ -34,11 +33,6 @@ in {
 				xrandr --output DP-1 --off
 				";
 			executable = true;
-		};
-		".config/spotifyd" = {
-			text = ''
---username 11129098368 --password ${spotifydPassword}  --device_name nixos
-'';
 		};
 	};
 }
