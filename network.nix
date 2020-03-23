@@ -12,12 +12,14 @@
 
   networking.useDHCP = false;
   networking.interfaces.wlp107s0.useDHCP = true;
+  
   networking.hosts = {
     "127.0.0.1" = ["happyproperty.vm"];
   };
+
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [22 80 443 1194];
+    allowedTCPPorts = [];
     allowPing = false;
   };
 
