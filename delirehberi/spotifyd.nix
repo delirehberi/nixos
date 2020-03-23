@@ -7,7 +7,6 @@ let
     password = ${password}
     backend = pulseaudio
     device_name = nixos-home
-
     '';
 in {
   home.packages = [pkgs.spotifyd];
@@ -16,6 +15,8 @@ in {
   Unit = {
       Description = "Spotify daemon";
       Documentation = "https://github.com/Spotifyd/spotifyd";
+      Wants = ["sound.target" "network-online.target"];
+      After = ["sound.target" "network-online.target"];
     };
   Install.WantedBy = [ "default.target" ];
 
@@ -23,6 +24,7 @@ in {
       ExecStart = "${pkgs.spotifyd}/bin/spotifyd --no-daemon --config ${configFile}";
       Restarts  = "always";
       RestartSec = 12;
+      CacheDirectory = "spotifyd";
     };
   };
 }
