@@ -1,7 +1,7 @@
 {config,lib,pkgs,...}:
 let 
   all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {};
-  my-hies = all-hies.selection {selector = p: {inherit (p) ghc864;};};
+  my-hies = all-hies.selection {selector = p: {inherit (p) ghc864 ghc865;};};
 in {
   programs.vscode.enable = true;
   programs.vscode.haskell.enable = true;
@@ -57,6 +57,12 @@ in {
     publisher = "ms-vscode";
     sha256 = "b0a8ddc4cbe58796b82deeefc87007836dcaedd7d6591eaacbac20b0c84ba8a3";
   }
+  {
+      name = "vscode-wakatime";
+      publisher = "WakaTime";
+      version = "4.0.0";
+      sha256 = "0bwxz8dg00k8frnvkvcngll5yaf9k7z13dg309vmw8xbdgkiyid4";
+  }
   ];
   programs.vscode.userSettings = {
     "files.autoSave" = "onFocusChange";
@@ -83,11 +89,8 @@ in {
     "diffEditor.ignoreTrimWhitespace" = false;
   };
   home.packages = [
-    my-hies
-#      (import (fetchTarball "https://github.com/cachix/ghcide-nix/tarball/master") {}).ghcide-ghc865
-      (import (fetchTarball "https://github.com/cachix/ghcide-nix/tarball/master") {}).ghcide-ghc864
+      my-hies
       pkgs.haskellPackages.brittany
-      pkgs.haskellPackages.hoogle
   ];
 
 }
