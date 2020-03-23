@@ -1,0 +1,35 @@
+{config,pkgs,lib,...}:
+{
+  environment.systemPackages = with pkgs; [
+    wget 
+    git 
+    cachix 
+    alacritty 
+    spotifyd 
+    gnome3.nautilus 
+    gnome3.sushi 
+    bashmount 
+    ntfs3g 
+    xclip 
+    lastpass-cli 
+    gnumake 
+    obs-studio 
+    lxqt.pavucontrol-qt 
+    shutter 
+    powerline-rs 
+    ncurses 
+    ncurses5
+    zlib 
+    zlib.dev
+    zlib.out
+    stack
+    haskellPackages.hoogle
+    haskellPackages.haddock
+    nix-index
+    docker-compose
+    xdotool
+    font-awesome
+    freetype
+  ];
+
+}
