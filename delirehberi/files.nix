@@ -14,7 +14,6 @@ in {
 		".rofi-trigger" = {
 			text = "
 #!/bin/bash 
-#        source ~/.profile
 				${pkgs.rofi}/bin/rofi -combi-modi window,drun,run,ssh -theme solarized -font 'hack 10' -show combi -modi combi 
 				";
 			executable = true;
