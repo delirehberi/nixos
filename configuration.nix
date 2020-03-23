@@ -1,12 +1,12 @@
 { config, pkgs, ... }:
 let 
-  spotifydConfig = import /home/delirehberi/.config/spotifyd;
   openvpnConfig = builtins.readFile /home/delirehberi/emre.ovpn;
 in 
   {
     imports =
       [ 
         ./hardware-configuration.nix
+        ./packages.nix
         ./xserver.nix
         ./boot.nix
         ./network.nix
@@ -41,10 +41,7 @@ in
       };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    wget git cachix alacritty spotifyd playerctl gnome3.nautilus gnome3.sushi bashmount ntfs3g xclip lastpass-cli gnumake obs-studio lxqt.pavucontrol-qt shutter powerline-rs zoom-us
-  ];
-
+  
   programs.tmux.enable = true;
   virtualisation.docker.enable = true;
 
