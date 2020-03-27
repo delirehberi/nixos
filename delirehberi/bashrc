@@ -16,3 +16,5 @@ alias ..='cd ..'
 alias du='du -kh' 
 alias df='df -kTh'
 alias l="ls -alh --color"
+
+export PATH=$PATH:~/.local/bin
