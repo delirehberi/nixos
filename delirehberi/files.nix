@@ -9,7 +9,8 @@ in {
     ".tmux.conf".text = tmux;
 		".wakatime.cfg".text ="
 			[settings]
-			api_key = ${wakatimeKey}
+      api_key = ${wakatimeKey}
+      debug = true
 		";
 		".rofi-trigger" = {
 			text = "
