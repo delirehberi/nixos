@@ -74,7 +74,13 @@ in
   '';
   services.openvpn.servers.client.config = openvpnConfig;
   services.openvpn.servers.client.autoStart = true;
-  services.redshift.enable = true;
+  services.redshift = {
+    enable = true;
+    brightness =  {
+      day = "1";
+      night = "0.5";
+    };
+  };
   location = {
     # Ankara City
     latitude = 39.925533;
