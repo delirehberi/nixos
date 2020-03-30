@@ -9,6 +9,7 @@ let
     ./vim.nix
     ./go.nix
     ./spotifyd.nix
+    ./scripts.nix
   ];
 in {
   nixpkgs.config.allowUnfree = true;

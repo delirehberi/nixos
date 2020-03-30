@@ -17,6 +17,8 @@ in {
         modifier = mod;
         keybindings = lib.mkOptionDefault {
           "${mod}+d"= "exec ~/.rofi-trigger";
+          "${mod}+Shift+d" = "exec rofi-web-search";
+          "${mod}+Shift+b" = "exec rofi-bluetooth";
 	        "${mod}+Return" = "exec alacritty";
           "control+Mod1+l" = "exec \"i3lock-fancy -p\"";
           "${mod}+Shift+q" = "kill";
