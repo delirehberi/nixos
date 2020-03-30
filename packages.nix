@@ -20,8 +20,6 @@
     ncurses 
     ncurses5
     zlib 
-    zlib.dev
-    zlib.out
     stack
     haskellPackages.hoogle
     haskellPackages.haddock
@@ -30,6 +28,9 @@
     xdotool
     font-awesome
     freetype
+    gcc
+    glibc
+    python
   ];
 
 }
