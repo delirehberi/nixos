@@ -25,10 +25,10 @@ in {
           "XF86AudioRaiseVolume"  = "exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks";
           "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+10 i3blocks";
           "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks";
-#        "XF86AudioPlay" = "";
-#        "XF86AudioPause" = "";
-#        "XF86AudioNext" = "";
-#        "XF86AudioPrev" = "";
+          "XF86AudioPlay" = "exec spotifyctl play";
+          "XF86AudioPause" = "exec spotifyctl pause";
+          "XF86AudioNext" = "exec spotifyctl next";
+          "XF86AudioPrev" = "exec spotifyctl prev";
         };
         fonts = [ "FontAwesome 10" "Terminus 10" ];
         gaps = {

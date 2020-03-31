@@ -15,7 +15,6 @@
     gnumake 
     obs-studio 
     lxqt.pavucontrol-qt 
-    shutter 
     powerline-rs 
     ncurses 
     ncurses5

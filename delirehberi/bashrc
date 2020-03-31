@@ -16,6 +16,6 @@ alias ..='cd ..'
 alias du='du -kh' 
 alias df='df -kTh'
 alias l="ls -alh --color"
-
+alias ghci="stack ghci --resolver=lts-13.13"
 export PATH=$PATH:~/.local/bin
 export LD_LIBRARY_PATH=$(nix-build --no-out-link "<nixpkgs>" -A zlib)/lib:$LD_LIBRARY_PATH
