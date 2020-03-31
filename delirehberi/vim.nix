@@ -17,6 +17,7 @@
         set expandtab
         set autoindent
         set smartindent
+        set paste
         colo molokai
         let mapleader = ","
     '';
