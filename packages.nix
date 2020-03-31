@@ -30,6 +30,6 @@
     gcc
     glibc
     python
+    unzip
   ];
-
 }
