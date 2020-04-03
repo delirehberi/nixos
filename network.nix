@@ -19,9 +19,8 @@
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [4000];
+    allowedTCPPorts = [4000 3000];
     allowPing = false;
-    interfaces.wlp107s0.allowedTCPPorts = [4000];
   };
 
 }

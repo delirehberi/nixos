@@ -31,5 +31,8 @@
     glibc
     python
     unzip
+    zoom-us
+    direnv
+      skypeforlinux
   ];
 }

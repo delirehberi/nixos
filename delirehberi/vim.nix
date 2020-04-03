@@ -21,6 +21,6 @@
         colo molokai
         let mapleader = ","
     '';
-    plugins = with pkgs; [vimPlugins.surround vimPlugins.vim-wakatime vimPlugins.vim-nix vimPlugins.molokai vimPlugins.nerdtree vimPlugins.emmet-vim vimPlugins.ctrlp ];
+    plugins = with pkgs; [vimPlugins.surround  vimPlugins.vim-nix vimPlugins.molokai vimPlugins.nerdtree vimPlugins.emmet-vim vimPlugins.ctrlp ];
   };
 }

@@ -16,5 +16,6 @@
       glibcLocales
       speedtest-cli
       slack
+      solaar
   ];
 }
