@@ -20,6 +20,7 @@
     ncurses5
     zlib 
     stack
+    cabal-install
     haskellPackages.hoogle
     haskellPackages.haddock
     nix-index
@@ -31,8 +32,10 @@
     glibc
     python
     unzip
+    zip
     zoom-us
     direnv
-      skypeforlinux
+    skypeforlinux
+    rustup
   ];
 }
