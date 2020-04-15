@@ -1,8 +1,5 @@
 { config, pkgs, ... }:
-let 
-  openvpnConfig = builtins.readFile /home/delirehberi/emre.ovpn;
-in 
-  {
+{
     imports =
       [ 
         ./hardware-configuration.nix
@@ -72,8 +69,6 @@ in
      ${pkgs.tmux}/bin/tmux new
    fi
   '';
-  services.openvpn.servers.client.config = openvpnConfig;
-  services.openvpn.servers.client.autoStart = true;
   services.redshift = {
     enable = true;
     brightness =  {
