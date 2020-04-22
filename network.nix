@@ -25,6 +25,6 @@ in
     allowPing = false;
   };
   services.openvpn.servers.client.config = openvpnConfig;
-  services.openvpn.servers.client.autoStart = true;
+  services.openvpn.servers.client.autoStart = false;
 
 }

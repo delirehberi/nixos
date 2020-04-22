@@ -17,5 +17,6 @@
       speedtest-cli
       slack
       solaar
+      spotify
   ];
 }

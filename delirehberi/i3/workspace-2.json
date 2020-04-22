@@ -29,12 +29,11 @@
        "x": 5837,
        "y": 49
     },
-    "name": "Visual Studio Code",
+    "name": "Alacritty",
     "percent": 0.5,
     "swallows": [
        {
-        "class": "^Code$",
-        "instance": "^code$"
+        "class": "^Alacritty$"
        }
     ],
     "type": "con"

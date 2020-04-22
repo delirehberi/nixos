@@ -1,11 +1,11 @@
 {config,pkgs,lib,...}:
 {
   environment.systemPackages = with pkgs; [
+    lynx
     wget 
     git 
     cachix 
     alacritty 
-    spotifyd 
     gnome3.nautilus 
     gnome3.sushi 
     bashmount 

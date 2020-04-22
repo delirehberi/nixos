@@ -6,22 +6,37 @@
     viAlias = true;
     vimAlias = true;
     extraConfig = ''
+
+      let mapleader=","
       syntax on
       filetype plugin indent on
       set expandtab
       set autoindent
       set smartindent
       colo molokai
-      let mapleader=","
       set cmdheight=2
       set updatetime=300
       set shortmess+=c
       set signcolumn=yes
       set bs=2
       set shiftwidth=2
+      set tabstop=2
       set cursorline
       set ruler
       set number
+      set linebreak
+      set showbreak=+++
+      set spell
+      set ignorecase
+      set wrap
+      set foldmethod=indent
+
+      let g:loaded_matchparen=1
+
+
+      "custom maps
+      nmap <leader>w :w<cr>
+
 
 "e <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -63,6 +78,6 @@ inoremap <silent><expr> <c-space> coc#refresh()
       xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
       nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
     '';
-    plugins = with pkgs.vimPlugins; [surround  vim-nix molokai nerdtree emmet-vim ctrlp coc-nvim 	nerdtree-git-plugin  haskell-vim hoogle];
+    plugins = with pkgs.vimPlugins; [surround  vim-nix molokai nerdtree emmet-vim ctrlp coc-nvim 	nerdtree-git-plugin  haskell-vim hoogle vim-twig];
   };
 }

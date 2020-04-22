@@ -74,8 +74,8 @@ in {
         exec --no-startup-id "i3-msg 'workspace 2; append_layout ${./i3/workspace-2.json}'"
         exec --no-startup-id "alacritty"
         exec --no-startup-id "slack"
+        exec --no-startup-id "alacritty"
         exec --no-startup-id "firefox"
-        exec --no-startup-id "code"
         '';
     };
   }; 

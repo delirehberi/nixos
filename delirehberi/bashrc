@@ -25,3 +25,4 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 xset -display :0.0 -dpms
 xset -display :0.0 s off
+feh --randomize --bg-fill ~/Wallpapers/*
