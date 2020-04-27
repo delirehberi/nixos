@@ -9,6 +9,15 @@ let
       sha256="1nmqyrd6bqnpqrhzyi69h4v61b179jwcmsz3zis31bj3sbrqfcmm";
     };
   };
+  vim-snippets = pkgs.vimUtils.buildVimPlugin {
+    name="vim-snippets";
+    src=pkgs.fetchFromGitHub {
+      owner="honza";
+      repo="vim-snippets";
+      rev="5332d404e48d1f90f1dff52f0c8fa53161612b9d";
+      sha256="15xg7diz5jav1m0dc8pjsl4rmy6x4a2aay43m8ks2zwb7vxwxh5s";
+    };
+  };
 in {
   programs.neovim = {
     enable= true;
@@ -83,6 +92,6 @@ in {
       xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
       nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
     '';
-    plugins = with pkgs.vimPlugins; [surround  vim-nix molokai nerdtree emmet-vim ctrlp coc-nvim 	nerdtree-git-plugin  haskell-vim hoogle vim-twig php-getter-setter ultisnips];
+    plugins = with pkgs.vimPlugins; [surround  vim-nix molokai nerdtree emmet-vim ctrlp coc-nvim 	nerdtree-git-plugin  haskell-vim hoogle vim-twig php-getter-setter ultisnips vim-snippets];
   };
 }
