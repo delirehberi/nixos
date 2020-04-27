@@ -18,5 +18,6 @@
       slack
       solaar
       spotify
+      flameshot
   ];
 }

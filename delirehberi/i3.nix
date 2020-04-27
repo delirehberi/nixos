@@ -29,13 +29,14 @@ in {
           "XF86AudioPause" = "exec spotifyctl pause";
           "XF86AudioNext" = "exec spotifyctl next";
           "XF86AudioPrev" = "exec spotifyctl prev";
+          "Print" = "exec flameshot gui";
         };
         fonts = [ "FontAwesome 10" "Terminus 10" ];
         gaps = {
           inner = 12;
           outer = 15;
           smartBorders = "on";
-          smartGaps =true;
+          #smartGaps =true;
         };
         bars = [{
           fonts = [ "FontAwesome 10" "Terminus 10" ];

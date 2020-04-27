@@ -1,12 +1,20 @@
 {config, lib, pkgs, builtins, ...}:
-
-{
+let
+  php-getter-setter = pkgs.vimUtils.buildVimPlugin {
+    name="php-getter-setter";
+    src=pkgs.fetchFromGitHub {
+      owner="docteurklein";
+      repo="php-getter-setter.vim";
+      rev="e4eea8b3297ee9361d81475d5711af59a85cbdf9";
+      sha256="1nmqyrd6bqnpqrhzyi69h4v61b179jwcmsz3zis31bj3sbrqfcmm";
+    };
+  };
+in {
   programs.neovim = {
     enable= true;
     viAlias = true;
     vimAlias = true;
     extraConfig = ''
-
       let mapleader=","
       syntax on
       filetype plugin indent on
@@ -33,13 +41,10 @@
 
       let g:loaded_matchparen=1
 
-
       "custom maps
       nmap <leader>w :w<cr>
-
-
-"e <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+      "e <c-space> to trigger completion.
+      inoremap <silent><expr> <c-space> coc#refresh()
       " Use `[g` and `]g` to navigate diagnostics
       nmap <silent> [g <Plug>(coc-diagnostic-prev)
       nmap <silent> ]g <Plug>(coc-diagnostic-next)
@@ -78,6 +83,6 @@ inoremap <silent><expr> <c-space> coc#refresh()
       xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
       nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
     '';
-    plugins = with pkgs.vimPlugins; [surround  vim-nix molokai nerdtree emmet-vim ctrlp coc-nvim 	nerdtree-git-plugin  haskell-vim hoogle vim-twig];
+    plugins = with pkgs.vimPlugins; [surround  vim-nix molokai nerdtree emmet-vim ctrlp coc-nvim 	nerdtree-git-plugin  haskell-vim hoogle vim-twig php-getter-setter ultisnips];
   };
 }

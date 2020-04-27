@@ -1,6 +1,9 @@
 {config,pkgs,lib,...}:
 {
   environment.systemPackages = with pkgs; [
+    ncat
+    bind
+    bc
     lynx
     wget 
     git 
@@ -37,5 +40,7 @@
     direnv
     skypeforlinux
     rustup
+    openssl
   ];
+
 }
