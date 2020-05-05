@@ -1,0 +1,48 @@
+{
+  "border": "pixel",
+  "floating": "auto_off",
+  "layout": "splith",
+  "type": "con",
+  "nodes": [
+    {
+      "border": "pixel",
+      "current_border_width": 2,
+      "floating": "auto_off",
+      "geometry": {
+        "height": 600,
+        "width": 800,
+        "x": 0,
+        "y": 0
+      },
+      "name": "Spotify",
+      "percent": 0.5,
+      "swallows": [
+        {
+          "class": "spotify"
+        }
+      ],
+      "type": "con"
+    }
+    ,
+    {
+      "border": "pixel",
+      "current_border_width": 2,
+      "floating": "auto_off",
+      "geometry": {
+        "height": 2066,
+        "width": 3786,
+        "x": 3867,
+        "y": 47
+      },
+      "name": "Skype [1]",
+      "percent": 0.5,
+      "swallows": [
+        {
+          "class": "skype"
+        }
+      ],
+      "type": "con"
+    }
+  ]
+}
+

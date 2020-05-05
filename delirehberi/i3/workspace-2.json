@@ -18,24 +18,3 @@
     ],
     "type": "con"
 }
-
-{
-    "border": "pixel",
-    "current_border_width": 2,
-    "floating": "auto_off",
-    "geometry": {
-       "height": 1440,
-       "width": 1814,
-       "x": 5837,
-       "y": 49
-    },
-    "name": "Alacritty",
-    "percent": 0.5,
-    "swallows": [
-       {
-        "class": "^Alacritty$"
-       }
-    ],
-    "type": "con"
-}
-

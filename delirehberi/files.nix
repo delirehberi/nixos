@@ -2,10 +2,17 @@
 let 
   bashrc = (builtins.readFile ./bashrc);
   tmux = (builtins.readFile ./tmux);
+  gruvbox = (builtins.readFile ./vifm/gruvbox.vifm);
+  vifmrc = (builtins.readFile ./vifm/vifmrc);
+  comptonconf = (builtins.readFile ./compton.conf);
+  sshconf = (builtins.readFile ./ssh.conf);
 in {
   home.file = {
+    ".config/compton.conf".text=comptonconf;
     ".profile".text = bashrc;
     ".tmux.conf".text = tmux;
+    ".ssh/config".text = sshconf;
+    ".vifm/vifmrc".text=vifmrc;
 	  ".rofi-trigger" = {
 			text = "
 #!/bin/bash 

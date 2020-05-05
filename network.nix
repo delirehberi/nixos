@@ -11,6 +11,7 @@ in
     };
   };
   networking.wireless.userControlled.enable = true;
+  networking.nameservers=["8.8.8.8" "8.8.4.4"];
 
   networking.useDHCP = false;
   networking.interfaces.wlp107s0.useDHCP = true;

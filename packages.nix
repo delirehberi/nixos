@@ -1,6 +1,8 @@
 {config,pkgs,lib,...}:
 {
   environment.systemPackages = with pkgs; [
+    vifm
+    libsForQt5.vlc
     ncat
     bind
     bc
@@ -41,6 +43,9 @@
     skypeforlinux
     rustup
     openssl
+    xmagnify
+    xorg.xwininfo
+    compton
+    lm_sensors
   ];
-
 }

@@ -19,5 +19,6 @@
       solaar
       spotify
       flameshot
+      i3lock-fancy
   ];
 }

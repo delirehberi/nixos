@@ -34,7 +34,7 @@
   i18n.consoleFont = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
 
   hardware.pulseaudio.enable = true;
-
   hardware.bluetooth.enable = true;
   hardware.opengl.enable = true;
+  
 }

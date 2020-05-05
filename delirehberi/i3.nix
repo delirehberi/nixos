@@ -14,6 +14,10 @@ in {
         floating = {
           modifier = "Mod1";
         };
+        focus = {
+          mouseWarping = false;
+          followMouse = false;
+        };
         modifier = mod;
         keybindings = lib.mkOptionDefault {
           "${mod}+d"= "exec ~/.rofi-trigger";
@@ -30,11 +34,12 @@ in {
           "XF86AudioNext" = "exec spotifyctl next";
           "XF86AudioPrev" = "exec spotifyctl prev";
           "Print" = "exec flameshot gui";
+          "${mod}+Shift+z" = "exec magnify -w 640 -h 480 -m 3 -r 30";
         };
         fonts = [ "FontAwesome 10" "Terminus 10" ];
         gaps = {
-          inner = 12;
-          outer = 15;
+          inner = 40;
+          outer = 80;
           smartBorders = "on";
           #smartGaps =true;
         };
@@ -71,12 +76,21 @@ in {
         ];
       };
       extraConfig = ''
+        workspace 1 output eDP-1
+        workspace 2 output DP-1
+        workspace 3 output DP-1
+        workspace 4 output DP-1
         exec --no-startup-id "i3-msg 'workspace 1; append_layout ${./i3/workspace-1.json}'"
         exec --no-startup-id "i3-msg 'workspace 2; append_layout ${./i3/workspace-2.json}'"
+        exec --no-startup-id "i3-msg 'workspace 3; append_layout ${./i3/workspace-3.json}'"
+        exec --no-startup-id "alacritty"
+        exec --no-startup-id "alacritty"
         exec --no-startup-id "alacritty"
         exec --no-startup-id "slack"
-        exec --no-startup-id "alacritty"
         exec --no-startup-id "firefox"
+        exec --no-startup-id "spotify"
+        exec --no-startup-id "skype"
+
         '';
     };
   }; 

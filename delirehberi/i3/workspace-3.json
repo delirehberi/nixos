@@ -1,0 +1,45 @@
+{
+  "border": "pixel",
+  "floating": "auto_off",
+  "layout": "splith",
+  "type": "con",
+  "nodes": [
+{
+    "border": "none",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1280,
+       "width": 1707,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Alacritty",
+    "percent": 0.7,
+    "swallows": [
+       {
+        "class": "^Alacritty$"
+       }
+    ],
+    "type": "con"
+},
+{
+    "border": "none",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1280,
+       "width": 1707,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Alacritty",
+    "percent": 0.3,
+    "swallows": [
+       {
+        "class": "^Alacritty$"
+       }
+    ],
+    "type": "con"
+} ]
+}

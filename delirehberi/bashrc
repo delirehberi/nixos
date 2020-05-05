@@ -18,6 +18,13 @@ alias df='df -kTh'
 alias l="ls -alh --color"
 alias c="clear"
 alias ghci="stack ghci --resolver=lts-13.13"
+alias glog="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
+
+alias create-web="composer create-project symfony/website-skeleton"
+alias create-app="composer create-project symfony/skeleton"
+
+alias x="xclip -sel clip"
+
 export PATH=$PATH:~/.local/bin
 export LD_LIBRARY_PATH=$(nix-build --no-out-link "<nixpkgs>" -A zlib)/lib:$LD_LIBRARY_PATH
 eval "$(direnv hook bash)"

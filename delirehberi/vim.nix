@@ -47,11 +47,28 @@ in {
       set ignorecase
       set wrap
       set foldmethod=indent
+      set wildmenu
 
       let g:loaded_matchparen=1
 
       "custom maps
       nmap <leader>w :w<cr>
+      nmap <silent> ? :nohl<cr>
+      nnoremap gf :vertical wincmd f<CR>
+
+      "tabs
+      map <C-t><up> :tabr<cr>
+      map <C-t><down> :tabl<cr>
+      map <C-t><left> :tabp<cr>
+      map <C-t><right> :tabn<cr>
+
+
+      set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
+      set wildignore+=*.pdf,*.psd
+      set wildignore+=node_modules/*,bower_components/*
+      set wildignore+=var/cache/*,var/log/*
+
+
       "e <c-space> to trigger completion.
       inoremap <silent><expr> <c-space> coc#refresh()
       " Use `[g` and `]g` to navigate diagnostics
@@ -91,7 +108,13 @@ in {
       endfunction
       xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
       nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+
+      let g:ctrlp_custom_ignore = {
+                                  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp|var\/log\|var\/cache\|vendor|node_modules$',
+                                  \ 'file': '\.exe$\|\.so$\|\.dat|\.png|\.jpg|\.svg$'
+                                  \ }
+
     '';
-    plugins = with pkgs.vimPlugins; [surround  vim-nix molokai nerdtree emmet-vim ctrlp coc-nvim 	nerdtree-git-plugin  haskell-vim hoogle vim-twig php-getter-setter ultisnips vim-snippets];
+    plugins = with pkgs.vimPlugins; [surround  vim-nix molokai emmet-vim coc-nvim haskell-vim hoogle vim-twig php-getter-setter ultisnips vim-snippets];
   };
 }

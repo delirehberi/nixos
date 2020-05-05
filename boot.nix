@@ -7,4 +7,5 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.cleanTmpDir = true;
+  boot.kernelModules = ["coretemp" "adm1021"];
 }
