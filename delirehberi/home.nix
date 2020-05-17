@@ -14,7 +14,7 @@ let
 in {
   nixpkgs.config.allowUnfree = true;
   programs.home-manager.enable = true;
-  home.stateVersion = "19.09";
+  home.stateVersion = "20.03";
 
   imports = homeImports;
   
@@ -25,6 +25,6 @@ in {
   programs.firefox = {
     enable = true;
   };
-
+  home.keyboard.layout = "tr";
 }
 

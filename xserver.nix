@@ -12,14 +12,7 @@
       notifier = ''${pkgs.libnotify}/bin/notify-send "Locking in 10 seconds" '';
       time = 5;
     };
-    displayManager.lightdm = {
-      enable = true;
-      background = "/home/delirehberi/nixos/delirehberi/desktop.jpg";
-      greeters.gtk = {
-        theme.package = pkgs.zuki-themes;
-        theme.name = "Zukitre";
-      };
-    };
+    windowManager.i3.enable=true;
   };
 
 }

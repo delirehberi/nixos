@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs,lib, ... }:
 {
     imports =
       [ 
@@ -11,9 +11,11 @@
       ];
 
       
-      i18n = {
-        consoleFont = "Lat2-Terminus16";
-        consoleKeyMap = "trq";
+      #console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
+      console.font = "Lat2-Terminus16";
+      console.keyMap = "trq";
+
+      i18n={
         defaultLocale = "en_US.UTF-8";
       };
 
@@ -33,7 +35,6 @@
           inconsolata
           fira-mono
           font-awesome-ttf
-
         ];
       };
   # List packages installed in system profile. To search, run:
@@ -81,6 +82,6 @@
     latitude = 39.925533;
     longitude = 32.866287;
   };
-  system.stateVersion = "19.09"; # Did you read the comment?
+  system.stateVersion = "20.03"; # Did you read the comment?
 }
 
