@@ -6,9 +6,11 @@ let
   vifmrc = (builtins.readFile ./vifm/vifmrc);
   comptonconf = (builtins.readFile ./compton.conf);
   sshconf = (builtins.readFile ./ssh.conf);
+  dunstrc = (builtins.readFile ./dunstrc);
 in {
   home.file = {
     ".config/compton.conf".text=comptonconf;
+    ".config/dunst/dunstrc".text=dunstrc;
     ".profile".text = bashrc;
     ".tmux.conf".text = tmux;
     ".ssh/config".text = sshconf;

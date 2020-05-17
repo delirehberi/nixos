@@ -40,12 +40,17 @@
     zip
     zoom-us
     direnv
-    skypeforlinux
-    rustup
     openssl
-    xmagnify
     xorg.xwininfo
-    compton
     lm_sensors
+    nixops
+    awscli
+    nix-prefetch-scripts
+    pango
+    skypeforlinux
+    fzf
+    lsof
+    dunst
+    libnotify
   ];
 }
