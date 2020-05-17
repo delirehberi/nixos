@@ -4,8 +4,8 @@
   home.packages = with pkgs; [
       htop
       figlet
-      php
-      php73Packages.composer
+      php74
+      php74Packages.composer
       chromium
       nodejs-12_x
       yarn
