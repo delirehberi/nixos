@@ -18,11 +18,14 @@ in {
           mouseWarping = false;
           followMouse = false;
         };
+
+          fonts = ["monospace 12"];
         modifier = mod;
         keybindings = lib.mkOptionDefault {
           "${mod}+d"= "exec ~/.rofi-trigger";
           "${mod}+Shift+d" = "exec rofi-web-search";
           "${mod}+Shift+b" = "exec rofi-bluetooth";
+          "${mod}+Shift+f" = "exec fzf";
 	        "${mod}+Return" = "exec alacritty";
           "control+Mod1+l" = "exec \"i3lock-fancy -p\"";
           "${mod}+Shift+q" = "kill";
@@ -36,7 +39,6 @@ in {
           "Print" = "exec flameshot gui";
           "${mod}+Shift+z" = "exec magnify -w 640 -h 480 -m 3 -r 30";
         };
-        fonts = [ "FontAwesome 10" "Terminus 10" ];
         gaps = {
           inner = 40;
           outer = 80;
@@ -44,8 +46,8 @@ in {
           #smartGaps =true;
         };
         bars = [{
-          fonts = [ "FontAwesome 10" "Terminus 10" ];
           position = "bottom";
+          fonts = ["monospace 12"];
           statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${./i3/i3status-rust-bottom.toml}";
           colors = {
             "separator"="#666666";
@@ -58,7 +60,7 @@ in {
           };
         }
         {
-          fonts = [ "FontAwesome 10" "Terminus 10"];
+          fonts = ["monospace 12"];
           position = "top";
           statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${./i3/i3status-rust.toml}";
           workspaceButtons = false;
@@ -90,6 +92,9 @@ in {
         exec --no-startup-id "firefox"
         exec --no-startup-id "spotify"
         exec --no-startup-id "skype"
+        for_window [class="Spotify"] move to workspace 4
+        for_window [class="Skype"] move to workspace 4
+        for_window [class="firefox"] move to workspace 2
 
         '';
     };
