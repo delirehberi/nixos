@@ -8,3 +8,4 @@ set -g base-index 1
 set-option -sg escape-time 10
 
 bind r source-file ~/.tmux.conf \; display-message "Config reloaded..."
+set -s escape-time 0

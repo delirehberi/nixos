@@ -24,6 +24,12 @@ in {
     viAlias = true;
     vimAlias = true;
     extraConfig = ''
+      set hidden
+      set nobackup
+      set nowritebackup
+      set timeoutlen=1000 
+      set ttimeoutlen=0
+
       let mapleader=","
       syntax on
       filetype plugin indent on
@@ -48,11 +54,16 @@ in {
       set wrap
       set foldmethod=indent
       set wildmenu
+      set clipboard=unnamedplus
+      set guioptions+=a
+
+      autocmd InsertLeave * update
 
       let g:loaded_matchparen=1
 
       "custom maps
       nmap <leader>w :w<cr>
+      nmap <leader>ga :!git add %<cr>
       nmap <silent> ? :nohl<cr>
       nnoremap gf :vertical wincmd f<CR>
 
@@ -62,6 +73,7 @@ in {
       map <C-t><left> :tabp<cr>
       map <C-t><right> :tabn<cr>
 
+      map <C-q> :bd<cr>
 
       set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
       set wildignore+=*.pdf,*.psd
@@ -92,12 +104,9 @@ in {
                 call CocAction('doHover')
         endif
       endfunction
-
       " Highlight the symbol and its references when holding the cursor.
       autocmd CursorHold * silent call CocActionAsync('highlight')
 
-      " nerdtree toggle with ctrl+n
-      map <C-n> :NERDTreeToggle<CR>
 
       " move tabs
       nnoremap <C-Left> :tabprevious<CR>
@@ -109,10 +118,7 @@ in {
       xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
       nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
-      let g:ctrlp_custom_ignore = {
-                                  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp|var\/log\|var\/cache\|vendor|node_modules$',
-                                  \ 'file': '\.exe$\|\.so$\|\.dat|\.png|\.jpg|\.svg$'
-                                  \ }
+      inoremap jj <Esc>
 
     '';
     plugins = with pkgs.vimPlugins; [surround  vim-nix molokai emmet-vim coc-nvim haskell-vim hoogle vim-twig php-getter-setter ultisnips vim-snippets];
