@@ -40,8 +40,8 @@ in {
           "${mod}+Shift+z" = "exec magnify -w 640 -h 480 -m 3 -r 30";
         };
         gaps = {
-          inner = 40;
-          outer = 80;
+          inner = 20;
+          outer = 30;
           smartBorders = "on";
           #smartGaps =true;
         };
