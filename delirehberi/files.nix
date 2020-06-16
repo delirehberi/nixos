@@ -9,6 +9,9 @@ let
   dunstrc = (builtins.readFile ./dunstrc);
 in {
   home.file = {
+     ".ghci".text = ''
+      :set prompt "λ> "
+    '';
     ".config/compton.conf".text=comptonconf;
     ".config/dunst/dunstrc".text=dunstrc;
     ".profile".text = bashrc;
