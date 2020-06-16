@@ -1,18 +1,22 @@
 { config, pkgs,lib, ... }:
 {
-    imports =
-      [ 
-        ./hardware-configuration.nix
-        ./packages.nix
-        ./xserver.nix
-        ./boot.nix
-        ./network.nix
-        <home-manager/nixos>
-      ];
+  imports =
+    [ 
+      ./hardware-configuration.nix
+      ./packages.nix
+      ./xserver.nix
+      ./boot.nix
+      ./network.nix
+      <home-manager/nixos>
+    ];
 
-      
+    environment.etc."docker/daemon.json"= {
+      text=''{
+        "dns": ["10.0.0.2", "8.8.8.8"]
+        }'';
+      };
       #console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
-      console.font = "Lat2-Terminus16";
+      console.font = "Lat2-Terminus11";
       console.keyMap = "trq";
 
       i18n={
@@ -39,7 +43,7 @@
       };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  
+
   programs.tmux.enable = true;
   virtualisation.docker.enable = true;
 
@@ -65,6 +69,9 @@
   };
 
   programs.vim.defaultEditor = true;
+  programs.bash.shellAliases = {
+    cat="${pkgs.bat}/bin/bat";
+  };
   programs.bash.interactiveShellInit = ''
    if command -v ${pkgs.tmux}/bin/tmux &> /dev/null && [ -z "$TMUX" ]; then
      ${pkgs.tmux}/bin/tmux new
