@@ -48,9 +48,15 @@
     nix-prefetch-scripts
     pango
     skypeforlinux
+    tdesktop
     fzf
     lsof
     dunst
     libnotify
+    evtest
+    xorg.xinit
+    _2048-in-terminal
+    watchman
+    anydesk
   ];
 }
