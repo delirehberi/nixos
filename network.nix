@@ -11,17 +11,13 @@ in
     };
   };
   networking.wireless.userControlled.enable = true;
-  networking.nameservers=["8.8.8.8" "8.8.4.4"];
+  networking.nameservers=["199.247.4.41"];
 
   networking.interfaces.wlp107s0.useDHCP = true;
   
-  networking.hosts = {
-    "127.0.0.1" = ["happyproperty.vm"];
-  };
-
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [4000 3000];
+    allowedTCPPorts = [];
     allowPing = false;
   };
   services.openvpn.servers.client.config = openvpnConfig;
