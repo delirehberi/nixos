@@ -26,5 +26,10 @@ in {
     enable = true;
   };
   home.keyboard.layout = "tr";
+  xsession.pointerCursor = {
+    package = pkgs.vanilla-dmz;
+    name = "Vanilla-DMZ";
+    size = 128;
+  };
 }
 
