@@ -1,4 +1,4 @@
-{config, lib, pkgs, builtins, ...}:
+{config, lib, pkgs, ...}:
 let
   php-getter-setter = pkgs.vimUtils.buildVimPlugin {
     name="php-getter-setter";
@@ -47,6 +47,7 @@ in {
       set cursorline
       set ruler
       set number
+      set relativenumber
       set linebreak
       set showbreak=+++
       set spell
@@ -56,6 +57,16 @@ in {
       set wildmenu
       set clipboard=unnamedplus
       set guioptions+=a
+
+      let g:netrw_browse_split = 4
+      let g:netrw_altv = 1
+      let g:netrw_liststyle = 1
+      let g:netrw_altv = 1
+      let g:netrw_winsize = 25
+"      augroup ProjectDrawer
+"        autocmd!
+"        autocmd VimEnter * :Vexplore
+"      augroup END
 
       autocmd InsertLeave * update
 
