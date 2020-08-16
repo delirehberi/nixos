@@ -31,6 +31,7 @@ frf() {
   find $1 -type f -exec sed  -i "s+$2+$3+g" {} \;
 }
 
+
 export PATH=$PATH:~/.local/bin
 export LD_LIBRARY_PATH=$(nix-build --no-out-link "<nixpkgs>" -A zlib)/lib:$LD_LIBRARY_PATH
 eval "$(direnv hook bash)"

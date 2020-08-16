@@ -9,37 +9,10 @@
             "border": "pixel",
             "current_border_width": 2,
             "floating": "auto_off",
-            "geometry": {
-               "height": 2496,
-               "width": 3328,
-               "x": 0,
-               "y": 0
-            },
             "name": "Alacritty",
-            "percent": 0.6,
             "swallows": [
                {
                 "class": "^Alacritty$"
-               }
-            ],
-            "type": "con"
-        },
-        {
-            "border": "pixel",
-            "current_border_width": 2,
-            "floating": "auto_off",
-            "geometry": {
-               "height": 1296,
-               "width": 1536,
-               "x": 3712,
-               "y": 432
-            },
-            "name": "Slack",
-            "percent": 0.4,
-            "swallows": [
-               {
-                 "class": "^Slack$",
-                 "instance": "^slack$"
                }
             ],
             "type": "con"

@@ -23,6 +23,22 @@
       ],
       "type": "con"
     }
+    ,
+    {
+      "border": "pixel",
+      "current_border_width": 2,
+      "floating": "auto_off",
+      "name": "Slack",
+      "percent": 0.4,
+      "swallows": [
+        {
+          "class": "^Slack$",
+          "instance": "^slack$"
+        }
+      ],
+      "type": "con"
+    }
+
   ]
 }
 

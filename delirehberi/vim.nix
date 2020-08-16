@@ -130,8 +130,10 @@ in {
       nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
       inoremap jj <Esc>
-
+      
+      "search word on cursor in all files
+      map <leader>* :grep -R <cword> * --exclude-dir={.git,tmp,log,vendor,var,cache,build}<CR><CR>
     '';
-    plugins = with pkgs.vimPlugins; [surround  vim-nix molokai emmet-vim coc-nvim haskell-vim hoogle vim-twig php-getter-setter ultisnips vim-snippets];
+    plugins = with pkgs.vimPlugins; [surround  vim-nix molokai emmet-vim coc-nvim haskell-vim hoogle vim-twig php-getter-setter ultisnips vim-snippets editorconfig-vim coc-css coc-emmet coc-json coc-yaml];
   };
 }

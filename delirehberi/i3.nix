@@ -25,7 +25,6 @@ in {
           "${mod}+d"= "exec ~/.rofi-trigger";
           "${mod}+Shift+d" = "exec rofi-web-search";
           "${mod}+Shift+b" = "exec rofi-bluetooth";
-          "${mod}+Shift+f" = "exec fzf";
 	        "${mod}+Return" = "exec alacritty";
           "control+Mod1+l" = "exec \"i3lock-fancy -p\"";
           "${mod}+Shift+q" = "kill";
@@ -85,17 +84,15 @@ in {
         exec --no-startup-id "i3-msg 'workspace 1; append_layout ${./i3/workspace-1.json}'"
         exec --no-startup-id "i3-msg 'workspace 2; append_layout ${./i3/workspace-2.json}'"
         exec --no-startup-id "i3-msg 'workspace 3; append_layout ${./i3/workspace-3.json}'"
+        exec --no-startup-id "i3-msg 'workspace 4; append_layout ${./i3/workspace-4.json}'"
         exec --no-startup-id "alacritty"
         exec --no-startup-id "alacritty"
         exec --no-startup-id "alacritty"
         exec --no-startup-id "slack"
         exec --no-startup-id "firefox"
         exec --no-startup-id "spotify"
-        exec --no-startup-id "skype"
         for_window [class="Spotify"] move to workspace 4
-        for_window [class="Skype"] move to workspace 4
-        for_window [class="firefox"] move to workspace 2
-
+        for_window [class="Slack"] move to workspace 4
         '';
     };
   }; 

@@ -1,12 +1,12 @@
 {config,lib,pkgs,...}:
 let 
-  all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {};
-  my-hies = all-hies.selection {selector = p: {inherit (p) ghc864 ghc865;};};
+  #all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {};
+  #my-hies = all-hies.selection {selector = p: {inherit (p) ghc864 ghc865;};};
 in {
   programs.vscode.enable = true;
-  programs.vscode.haskell.enable = true;
-  programs.vscode.haskell.hie.enable = true;
-  programs.vscode.haskell.hie.executablePath = "${my-hies}/bin/hie";
+  #programs.vscode.haskell.enable = true;
+  #programs.vscode.haskell.hie.enable = true;
+  #programs.vscode.haskell.hie.executablePath = "${my-hies}/bin/hie";
   programs.vscode.extensions =  pkgs.vscode-utils.extensionsFromVscodeMarketplace [
   {
     name = "brittany";
@@ -90,7 +90,7 @@ in {
     "update.mode"="none";
     };
     home.packages = [
-    my-hies
+    #my-hies
     pkgs.haskellPackages.brittany
     ];
 

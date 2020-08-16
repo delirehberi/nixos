@@ -9,6 +9,9 @@ in
     "FiberHGW_TP7CA6_2.4GHz"= {
       psk = import ./wireless.secret.nix;
     };
+    "delirehberiust"={
+      psk = import ./wireless.delirehberiust.secret.nix;
+    };
   };
   networking.wireless.userControlled.enable = true;
   networking.nameservers=["199.247.4.41"];
@@ -22,5 +25,9 @@ in
   };
   services.openvpn.servers.client.config = openvpnConfig;
   services.openvpn.servers.client.autoStart = false;
+
+  networking.hosts = {
+    "127.0.0.1" = ["localhost" "dev.7cups.local" "devlite.7cups.local"];
+  };
 
 }

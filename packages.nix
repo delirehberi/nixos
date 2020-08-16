@@ -1,7 +1,11 @@
 {config,pkgs,lib,...}:
 {
+  nixpkgs.config.packageOverrides = pkgs: {
+    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+      inherit pkgs;
+    };
+  };
   environment.systemPackages = with pkgs; [
-    vifm
     libsForQt5.vlc
     ncat
     bind
@@ -16,7 +20,6 @@
     bashmount 
     ntfs3g 
     xclip 
-    lastpass-cli 
     gnumake 
     obs-studio 
     lxqt.pavucontrol-qt 
@@ -38,7 +41,6 @@
     python
     unzip
     zip
-    zoom-us
     direnv
     openssl
     xorg.xwininfo
@@ -49,14 +51,15 @@
     pango
     skypeforlinux
     tdesktop
-    fzf
-    lsof
     dunst
     libnotify
     evtest
     xorg.xinit
     _2048-in-terminal
-    watchman
     anydesk
+    transmission
+    haskellPackages.ghcide
+    mysql-workbench
+    glirc
   ];
 }

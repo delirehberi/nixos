@@ -9,7 +9,6 @@
       ./network.nix
       <home-manager/nixos>
     ];
-
     environment.etc."docker/daemon.json"= {
       text=''{
         "dns": ["10.0.0.2", "8.8.8.8"]
@@ -46,6 +45,11 @@
 
   programs.tmux.enable = true;
   virtualisation.docker.enable = true;
+  virtualisation.virtualbox ={
+    host = {
+      enable = true;
+    };
+  };
 
   sound.enable = true;
   sound.mediaKeys.enable = true;
