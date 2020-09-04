@@ -42,8 +42,8 @@ in {
       set shortmess+=c
       set signcolumn=yes
       set bs=2
-      set shiftwidth=2
-      set tabstop=2
+      set shiftwidth=4
+      set tabstop=4
       set cursorline
       set ruler
       set number
@@ -134,6 +134,28 @@ in {
       "search word on cursor in all files
       map <leader>* :grep -R <cword> * --exclude-dir={.git,tmp,log,vendor,var,cache,build}<CR><CR>
     '';
-    plugins = with pkgs.vimPlugins; [surround  vim-nix molokai emmet-vim coc-nvim haskell-vim hoogle vim-twig php-getter-setter ultisnips vim-snippets editorconfig-vim coc-css coc-emmet coc-json coc-yaml];
+    plugins = with pkgs.vimPlugins; [
+      surround 
+      molokai 
+      emmet-vim 
+      hoogle 
+      php-getter-setter 
+      ultisnips 
+      vim-snippets 
+      editorconfig-vim 
+      coc-nvim 
+      coc-emmet 
+      vim-airline-themes
+      #language plugins/syntax etc.
+      coc-css 
+      coc-json 
+      coc-yaml 
+      vim-javascript 
+      vim-jsx-pretty 
+      rust-vim
+      vim-twig 
+      haskell-vim 
+      vim-nix 
+    ];
   };
 }

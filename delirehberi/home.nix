@@ -5,10 +5,8 @@ let
     ./files.nix
     ./packages.nix
     ./git.nix
-    ./vscode.nix
     ./vim.nix
     ./go.nix
-    ./spotifyd.nix
     ./scripts.nix
   ];
 in {

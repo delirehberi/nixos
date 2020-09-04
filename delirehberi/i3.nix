@@ -25,18 +25,17 @@ in {
           "${mod}+d"= "exec ~/.rofi-trigger";
           "${mod}+Shift+d" = "exec rofi-web-search";
           "${mod}+Shift+b" = "exec rofi-bluetooth";
-	        "${mod}+Return" = "exec alacritty";
+	      "${mod}+Return" = "exec alacritty";
           "control+Mod1+l" = "exec \"i3lock-fancy -p\"";
           "${mod}+Shift+q" = "kill";
           "XF86AudioRaiseVolume"  = "exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks";
           "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+10 i3blocks";
           "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks";
-          "XF86AudioPlay" = "exec spotifyctl play";
-          "XF86AudioPause" = "exec spotifyctl pause";
-          "XF86AudioNext" = "exec spotifyctl next";
-          "XF86AudioPrev" = "exec spotifyctl prev";
+          "XF86AudioPlay" = "exec cmus-remote -p";
+          "XF86AudioPause" = "exec cmus-remote -u";
+          "XF86AudioNext" = "exec cmus-remote -n";
+          "XF86AudioPrev" = "exec cmus-remote -r";
           "Print" = "exec flameshot gui";
-          "${mod}+Shift+z" = "exec magnify -w 640 -h 480 -m 3 -r 30";
         };
         gaps = {
           inner = 20;
@@ -89,10 +88,10 @@ in {
         exec --no-startup-id "alacritty"
         exec --no-startup-id "alacritty"
         exec --no-startup-id "slack"
-        exec --no-startup-id "firefox"
-        exec --no-startup-id "spotify"
-        for_window [class="Spotify"] move to workspace 4
+        exec --no-startup-id "brave"
+        exec --no-startup-id "telegram"
         for_window [class="Slack"] move to workspace 4
+        for_window [class="Brave"] move to workspace 2
         '';
     };
   }; 

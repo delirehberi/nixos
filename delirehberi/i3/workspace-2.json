@@ -8,11 +8,11 @@
        "x": 0,
        "y": 0
     },
-    "name": "Mozilla Firefox",
+    "name": "Brave",
     "percent": 0.5,
     "swallows": [
        {
-        "class": "^Firefox$",
+        "class": "^Brave$",
         "instance": "^Navigator$"
        }
     ],

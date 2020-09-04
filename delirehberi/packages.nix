@@ -11,13 +11,10 @@
       yarn
       kerberos
       jq
-      yad
-      rofi
       glibcLocales
       speedtest-cli
       slack
       solaar
-      spotify
       flameshot
       i3lock-fancy
   ];
