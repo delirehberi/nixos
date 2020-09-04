@@ -61,5 +61,10 @@
     haskellPackages.ghcide
     mysql-workbench
     glirc
+    mplayer
+    acpi
+    youtube-dl
+    cmus
+    brave
   ];
 }
