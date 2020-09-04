@@ -14,18 +14,18 @@ in
     };
   };
   networking.wireless.userControlled.enable = true;
-  networking.nameservers=["199.247.4.41"];
+  networking.nameservers=["8.8.8.8" "8.8.4.4"];
 
   networking.interfaces.wlp107s0.useDHCP = true;
   
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [];
-    allowPing = false;
+    allowPing = true;
+    allowedTCPPorts = [22];
   };
   services.openvpn.servers.client.config = openvpnConfig;
   services.openvpn.servers.client.autoStart = false;
-
+  services.sshd.enable = true;
   networking.hosts = {
     "127.0.0.1" = ["localhost" "dev.7cups.local" "devlite.7cups.local"];
   };
