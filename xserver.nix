@@ -28,7 +28,7 @@
       enable = true;
       locker = "${pkgs.i3lock-fancy}/bin/i3lock-fancy";
       enableNotifier = true;
-      notifier = ''${pkgs.libnotify}/bin/notify-send "Locking in 10 seconds" '';
+      notifier = ''${pkgs.libnotify}/bin/notify-send "Locking in 30 seconds" '';
       time = 30;
     };
     windowManager.i3.enable=true;
