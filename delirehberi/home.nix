@@ -11,7 +11,7 @@ let
 in {
   nixpkgs.config.allowUnfree = true;
   programs.home-manager.enable = true;
-  home.stateVersion = "20.03";
+  home.stateVersion = "20.09";
 
   imports = homeImports;
   
