@@ -18,19 +18,29 @@ alias du='du -kh'
 alias df='df -kTh'
 alias l="ls -alh --color"
 alias c="clear"
-alias ghci="stack ghci --resolver=lts-13.13"
+#alias ghci="stack ghci --resolver=lts-15.15"
 alias glog="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
+alias gs="git status -s -b"
+alias ga="git add"
+alias gd="git diff"
+alias gc="git commit -m "
 
 alias create-web="composer create-project symfony/website-skeleton"
 alias create-app="composer create-project symfony/skeleton"
 
 alias x="xclip -sel clip"
+alias p="openssl rand -hex 6"
 
 #find and replace in directory or file
 frf() {
-  find $1 -type f -exec sed  -i "s+$2+$3+g" {} \;
+  echo "find $1 -type f -exec sed  -i \"s+$2+$3+g\" {} \;";
+}
+gpo() {
+    activeBranch=$(git branch|grep '*'|tr -d '* ')
+    git push origin $activeBranch
 }
 
+alias youtube="youtube-dl --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 160K --output '%(title)s.%(ext)s' --yes-playlist "
 
 export PATH=$PATH:~/.local/bin
 export LD_LIBRARY_PATH=$(nix-build --no-out-link "<nixpkgs>" -A zlib)/lib:$LD_LIBRARY_PATH
@@ -40,3 +50,4 @@ export PATH="$HOME/.cargo/bin:$PATH"
 xset -display :0.0 -dpms
 xset -display :0.0 s off
 feh --randomize --bg-fill ~/Wallpapers/*
+set -o vi
