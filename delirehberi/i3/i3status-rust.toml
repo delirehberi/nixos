@@ -41,5 +41,11 @@ interval = 60
 format = "%a %m/%d %I:%M"
 
 [[block]]
+block = "time"
+interval = 60
+format = "%a %m/%d %I:%M"
+timezone = "US/Eastern"
+
+[[block]]
 block = "battery"
 device = "BAT1"
