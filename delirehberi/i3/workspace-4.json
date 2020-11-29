@@ -4,20 +4,6 @@
   "layout": "splith",
   "type": "con",
   "nodes": [
-    {
-      "border": "pixel",
-      "current_border_width": 2,
-      "floating": "auto_off",
-      "name": "Telegram",
-      "percent": 0.4,
-      "swallows": [
-        {
-          "class": "^Telegram$",
-          "instance": "^telegram$"
-        }
-      ],
-      "type": "con"
-    }
 
   ]
 }

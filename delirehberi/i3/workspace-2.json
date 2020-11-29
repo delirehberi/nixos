@@ -8,13 +8,4 @@
        "x": 0,
        "y": 0
     },
-    "name": "Brave",
-    "percent": 0.5,
-    "swallows": [
-       {
-        "class": "^Brave$",
-        "instance": "^Navigator$"
-       }
-    ],
-    "type": "con"
 }
