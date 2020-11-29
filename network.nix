@@ -2,18 +2,17 @@
 let 
   openvpnConfig = builtins.readFile /home/delirehberi/emre2.ovpn;
 in 
-{
-  networking.hostName = "home.emre.xyz"; 
-  networking.wireless.enable = true;
+  {
+    networking.domain = "emre.xyz";
+  networking.hostName = "home"; 
+  networking.wireless.enable = false;
   networking.wireless.networks = {
     "FiberHGW_TP7CA6_2.4GHz"= {
       psk = import ./wireless.secret.nix;
     };
-    "delirehberiust"={
-      psk = import ./wireless.delirehberiust.secret.nix;
-    };
   };
   networking.wireless.userControlled.enable = true;
+  networking.interfaces.enp0s20.useDHCP=false;
   networking.nameservers=["8.8.8.8" "8.8.4.4"];
 
   networking.interfaces.wlp107s0.useDHCP = true;
@@ -21,7 +20,7 @@ in
   networking.firewall = {
     enable = true;
     allowPing = true;
-    allowedTCPPorts = [22];
+    allowedTCPPorts = [22 8080 3000];
   };
   services.openvpn.servers.client.config = openvpnConfig;
   services.openvpn.servers.client.autoStart = false;
