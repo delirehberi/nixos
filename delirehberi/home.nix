@@ -3,7 +3,6 @@ let
   homeImports = [
     ./i3.nix
     ./files.nix
-    ./packages.nix
     ./git.nix
     ./vim.nix
     ./go.nix
@@ -16,13 +15,8 @@ in {
 
   imports = homeImports;
   
-  programs.chromium.enable=true;
+#  programs.feh.enable = true;
   
-  programs.feh.enable = true;
-  
-  programs.firefox = {
-    enable = true;
-  };
   home.keyboard.layout = "tr";
 }
 
