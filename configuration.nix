@@ -1,19 +1,22 @@
-{ config, pkgs,lib, ... }:
-{
-  imports =
-    [ 
-      ./hardware-configuration.nix
-      ./packages.nix
-      ./xserver.nix
-      ./boot.nix
-      ./network.nix
-      <home-manager/nixos>
-    ];
-    environment.etc."docker/daemon.json"= {
-      text=''{
-        "dns": ["10.0.0.2", "8.8.8.8"]
-        }'';
-      };
+{ config, pkgs,lib,callPackage, ... }:
+let 
+  bahriyeApp = import /home/delirehberi/www/bahriye {inherit pkgs;};
+in
+  {
+    imports =
+      [ 
+        ./hardware-configuration.nix
+        ./packages.nix
+        ./xserver.nix
+        ./boot.nix
+        ./network.nix
+        <home-manager/nixos>
+      ];
+      environment.etc."docker/daemon.json"= {
+        text=''{
+          "dns": ["10.0.0.2", "8.8.8.8"]
+          }'';
+        };
       #console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
       console.font = "Lat2-Terminus11";
       console.keyMap = "trq";
@@ -42,6 +45,7 @@
       };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  services.gnome3.gnome-keyring.enable=true;
 
   programs.tmux.enable = true;
   virtualisation.docker.enable = true;
@@ -82,7 +86,7 @@
    fi
   '';
   services.redshift = {
-    enable = true;
+    enable = false;
     brightness =  {
       day = "1";
       night = "0.5";
@@ -93,6 +97,28 @@
     latitude = 39.925533;
     longitude = 32.866287;
   };
-  system.stateVersion = "20.03"; # Did you read the comment?
+
+  services.cron = {
+    enable = true;
+    systemCronJobs = [
+      #"*/30 * * * * root speedtest --json > /home/delirehberi/speedtest-result/$(date|tr -d '\ +:-')\".st\""
+    ];
+  };
+  systemd.user.services = {
+    dunst = {
+      script = "${pkgs.dunst}/bin/dunst";
+    };
+    bahriye = {
+      enable = true;
+      after  = ["network.target" "sound.target"];
+      wantedBy = ["default.target"];
+      script = "${bahriyeApp}/bin/bahriye";
+      serviceConfig = {
+        "Restart" = "always";
+        "RestartSec"= 5;
+      };
+    };
+  };
+  system.stateVersion = "20.09"; # Did you read the comment?
 }
 
