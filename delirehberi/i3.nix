@@ -2,9 +2,6 @@
 let
   mod = "Mod4";
 in {
-  home.packages = [
-    pkgs.i3blocks
-  ];
   xsession = {
     enable = true;
     windowManager.i3 = {
@@ -81,17 +78,12 @@ in {
         workspace 3 output DP-1
         workspace 4 output DP-1
         exec --no-startup-id "i3-msg 'workspace 1; append_layout ${./i3/workspace-1.json}'"
-        exec --no-startup-id "i3-msg 'workspace 2; append_layout ${./i3/workspace-2.json}'"
         exec --no-startup-id "i3-msg 'workspace 3; append_layout ${./i3/workspace-3.json}'"
-        exec --no-startup-id "i3-msg 'workspace 4; append_layout ${./i3/workspace-4.json}'"
         exec --no-startup-id "alacritty"
         exec --no-startup-id "alacritty"
         exec --no-startup-id "alacritty"
         exec --no-startup-id "slack"
         exec --no-startup-id "brave"
-        exec --no-startup-id "telegram"
-        for_window [class="Slack"] move to workspace 4
-        for_window [class="Brave"] move to workspace 2
         '';
     };
   }; 
