@@ -6,7 +6,7 @@
     };
   };
   environment.systemPackages = with pkgs; [
-    libsForQt5.vlc
+    vlc
     ncat
     bind
     bc
@@ -66,5 +66,27 @@
     youtube-dl
     cmus
     brave
+    libgnome-keyring
+    timewarrior
+    mycli
+    htop
+    figlet
+    php74
+    php74Packages.composer
+    chromium
+    nodejs-12_x
+    yarn
+    kerberos
+    jq
+    glibcLocales
+    speedtest-cli
+#    slack
+    solaar
+    flameshot
+    i3lock-fancy
+    i3blocks
+    feh
+    moreutils
+    ranger
   ];
 }
