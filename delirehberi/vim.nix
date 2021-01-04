@@ -57,6 +57,7 @@ in {
       set wildmenu
       set clipboard=unnamedplus
       set guioptions+=a
+      set scrolloff=5
 
       let g:netrw_browse_split = 4
       let g:netrw_altv = 1
@@ -133,6 +134,12 @@ in {
       
       "search word on cursor in all files
       map <leader>* :grep -R <cword> * --exclude-dir={.git,tmp,log,vendor,var,cache,build}<CR><CR>
+
+      noremap <Up> <Nop>
+      noremap <Down> <Nop>
+      noremap <Left> <Nop>
+      noremap <Right> <Nop>
+
     '';
     plugins = with pkgs.vimPlugins; [
       surround 
