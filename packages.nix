@@ -83,10 +83,13 @@
 #    slack
     solaar
     flameshot
-    i3lock-fancy
+    i3lock
     i3blocks
     feh
     moreutils
     ranger
+    inotify-tools
+    thunderbird
+    translate-shell
   ];
 }
