@@ -39,6 +39,10 @@ gpo() {
     activeBranch=$(git branch|grep '*'|tr -d '* ')
     git push origin $activeBranch
 }
+gup() {
+    activeBranch=$(git branch|grep '*'|tr -d '* ')
+    git pull origin $activeBranch
+}
 
 alias youtube="youtube-dl --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 160K --output '%(title)s.%(ext)s' --yes-playlist "
 
