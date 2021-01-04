@@ -1,6 +1,7 @@
 { config, pkgs,lib,callPackage, ... }:
 let 
   bahriyeApp = import /home/delirehberi/www/bahriye {inherit pkgs;};
+  telegram_api_key = builtins.readFile ./telegram.secret;
 in
   {
     imports =
@@ -12,6 +13,10 @@ in
         ./network.nix
         <home-manager/nixos>
       ];
+      nixpkgs.config = {
+        allowUnfree = true;
+        android_sdk.accept_license = true;
+      };
       environment.etc."docker/daemon.json"= {
         text=''{
           "dns": ["10.0.0.2", "8.8.8.8"]
@@ -60,8 +65,10 @@ in
 
   users.users.delirehberi = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "docker" "networkmanager" "adbusers"]; # Enable ‘sudo’ for the user.
   };
+
+  services.udev.packages = [pkgs.android-udev-rules];
 
   home-manager.users.delirehberi = import ./delirehberi/home.nix;
 
@@ -98,6 +105,8 @@ in
     longitude = 32.866287;
   };
 
+  programs.adb.enable = true; #android
+
   services.cron = {
     enable = true;
     systemCronJobs = [
@@ -107,12 +116,16 @@ in
   systemd.user.services = {
     dunst = {
       script = "${pkgs.dunst}/bin/dunst";
+      wantedBy = ["default.target"];
     };
     bahriye = {
       enable = true;
       after  = ["network.target" "sound.target"];
       wantedBy = ["default.target"];
       script = "${bahriyeApp}/bin/bahriye";
+      environment = {
+        API_KEY="${telegram_api_key}";
+      };
       serviceConfig = {
         "Restart" = "always";
         "RestartSec"= 5;
