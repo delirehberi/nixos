@@ -1,5 +1,5 @@
-theme = "gruvbox-dark"
-icons = "awesome"
+theme = "solarized-dark"
+icons = "awesome5"
 
 
 
@@ -10,6 +10,12 @@ ssid = true
 ip = true
 speed_up = true
 graph_up = true
+interval = 5
+
+[[block]]
+block = "net"
+device = "enp0s20f0u1u3u1"
+ip = true
 interval = 5
 
 [[block]]
@@ -37,3 +43,7 @@ interval = 2
 block = "custom"
 command = "echo G:$(curl -s -H 'Authorization: token '$(cat ~/.github-secrets) https://api.github.com/notifications|jq '.|length')"
 interval = 5
+
+[[block]]
+block = "custom"
+command = "php -r 'echo (new DateTime())->diff((new DateTime(\"1989-02-21\")))->format(\"%Y years %m months %d days\");'"

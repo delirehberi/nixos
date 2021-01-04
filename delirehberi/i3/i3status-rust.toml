@@ -1,5 +1,10 @@
-theme = "modern"
-icons = "awesome"
+theme = "solarized-dark"
+icons = "awesome5"
+
+[[block]]
+block = "speedtest"
+bytes = true
+interval = 1800
 
 [[block]]
 block = "uptime"

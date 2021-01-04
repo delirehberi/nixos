@@ -23,7 +23,7 @@ in {
           "${mod}+Shift+d" = "exec rofi-web-search";
           "${mod}+Shift+b" = "exec rofi-bluetooth";
 	      "${mod}+Return" = "exec alacritty";
-          "control+Mod1+l" = "exec \"i3lock-fancy -p\"";
+          "control+Mod1+l" = "exec \"i3lock -i ~/Wallpapers/desktop.png\"";
           "${mod}+Shift+q" = "kill";
           "XF86AudioRaiseVolume"  = "exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks";
           "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+10 i3blocks";
