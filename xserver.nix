@@ -26,7 +26,7 @@
     autorun = true;
     xautolock = {
       enable = true;
-      locker = "${pkgs.i3lock-fancy}/bin/i3lock-fancy";
+      locker = "${pkgs.i3lock}/bin/i3lock -i ~/Wallpapers/desktop.png";
       enableNotifier = true;
       notifier = ''${pkgs.libnotify}/bin/notify-send "Locking in 30 seconds" '';
       time = 30;
