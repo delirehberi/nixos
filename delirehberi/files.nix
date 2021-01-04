@@ -4,9 +4,13 @@ let
   tmux = (builtins.readFile ./tmux);
   sshconf = (builtins.readFile ./ssh.conf);
   dunstrc = (builtins.readFile ./dunstrc);
+  roficonf = (builtins.readFile ./rofi/config.rasi);
+  rofitheme = (builtins.readFile ./rofi/theme.rasi);
 in {
   home.file = {
     ".ghci".text = '':set prompt "λ> " '';
+    ".config/rofi/config.rasi".text = roficonf;
+    ".config/rofi/theme.rasi".text = rofitheme;
     ".config/dunst/dunstrc".text=dunstrc;
     ".profile".text = bashrc;
     ".tmux.conf".text = tmux;
@@ -14,7 +18,7 @@ in {
     ".rofi-trigger" = {
       text = ''
 #!/usr/bin/env bash 
-${pkgs.rofi}/bin/rofi -combi-modi window,drun,run,ssh -theme gruvbox-light -font 'hack 12' -show combi -modi combi
+${pkgs.rofi}/bin/rofi -combi-modi window,drun,run,ssh -font 'hack 12' -show combi -modi combi
       '';
       executable = true;
     };
